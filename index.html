@@ -23,18 +23,28 @@
             canvas {
                 border-radius: 8px;
                 box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+                cursor: none;
             }
         </style>
     </head>
     <body>
         <main></main>
 
-        <script src="src/style.js"></script>
-        <script src="src/common/vertex.js"></script>
-        <script src="src/electronics/wire.js"></script>
-        <script src="src/electronics/switch.js"></script>
-        <script src="src/electronics/battery.js"></script>
-        <script src="src/electronics/transistor.js"></script>
-        <script src="src/index.js"></script>
+        <script src="src/settings.js"></script>
+        <script src="src/electronics.js"></script>
+        <script src="src/logger.js"></script>
+        <script src="src/helpers.js"></script>
+
+        <script src="src/common/position.js"></script>
+        <script src="src/common/circuit-node.js"></script>
+        <script src="src/components/wire.js"></script>
+        <script src="src/components/battery.js"></script>
+
+        <script src="src/modes/default-mode.js"></script>
+        <script src="src/modes/wiring-mode.js"></script>
+        <script src="src/events.js"></script>
+
+        <script src="src/artist.js"></script>
+        <script src="src/sketch.js"></script>
     </body>
 </html>
