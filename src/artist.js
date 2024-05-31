@@ -28,6 +28,7 @@ class Artist {
     push();
 
     this._drawBatteries();
+    this._drawTransistors();
     this._drawWires();
     this._drawNodes();
 
@@ -84,7 +85,7 @@ class Artist {
   }
 
   static _drawBatteries() {
-    strokeWeight(4);
+    strokeWeight(2);
 
     for (const battery of Object.values(Electronics.batteries)) {
       beginShape(LINES);
@@ -118,6 +119,58 @@ class Artist {
         battery.output.position.y,
       );
       endShape();
+    }
+  }
+
+  static _drawTransistors() {
+    strokeWeight(2);
+
+    for (const transistor of Object.values(Electronics.transistors)) {
+      beginShape(STROKE);
+      vertex(transistor.input.position.x, transistor.input.position.y);
+      vertex(
+        transistor.input.position.x + 0.75 * Settings.grid.gap,
+        transistor.input.position.y,
+      );
+      vertex(
+        transistor.input.position.x + 0.85 * Settings.grid.gap,
+        transistor.input.position.y + 0.25 * Settings.grid.gap,
+      );
+      endShape();
+
+      beginShape(STROKE);
+      vertex(transistor.output.position.x, transistor.output.position.y);
+      vertex(
+        transistor.output.position.x - 0.75 * Settings.grid.gap,
+        transistor.output.position.y,
+      );
+      vertex(
+        transistor.output.position.x - 0.85 * Settings.grid.gap,
+        transistor.output.position.y + 0.25 * Settings.grid.gap,
+      );
+      endShape();
+
+      beginShape(LINES);
+      vertex(transistor.base.position.x, transistor.base.position.y);
+      vertex(
+        transistor.base.position.x,
+        transistor.base.position.y - 0.75 * Settings.grid.gap,
+      );
+      vertex(
+        transistor.base.position.x - 0.25 * Settings.grid.gap,
+        transistor.base.position.y - 0.75 * Settings.grid.gap,
+      );
+      vertex(
+        transistor.base.position.x + 0.25 * Settings.grid.gap,
+        transistor.base.position.y - 0.75 * Settings.grid.gap,
+      );
+      endShape();
+
+      circle(
+        transistor.position.x,
+        transistor.position.y,
+        Settings.grid.gap * 1.25,
+      );
     }
   }
 

@@ -6,7 +6,8 @@ function setup() {
 
   noFill();
 
-  const battery = new Battery(new Position(100, 100));
+  const battery = new Battery(new Position(200, 100));
+  const transistor = new Transistor(new Position(300, 200));
 }
 
 function draw() {

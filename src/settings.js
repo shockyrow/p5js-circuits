@@ -29,7 +29,7 @@ class Settings {
     },
     node: {
       color: 'white',
-      weight: 8,
+      weight: 4,
     },
     battery: {
       color: 'white',
@@ -39,8 +39,8 @@ class Settings {
         weight: 1,
         dash: [5],
       },
-      colors: ['red', 'slateblue', 'gray', 'green'],
-      weight: 4,
+      colors: ['red', 'slateblue', 84, 168],
+      weight: 2,
     },
   };
 }
